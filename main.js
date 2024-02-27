@@ -113,21 +113,59 @@ const phone = document.querySelectorAll(".phone-num");
 
 phone.forEach((p)=>{
   p.addEventListener("click",(event)=>{
-    let phoneNumber = "971502254994";
-    window.location.href = "tel:" + phoneNumber;
+    let phoneNumber = "01021068752";
+    let phoneLink = "tel:" + phoneNumber;
+    window.open(phoneLink,"_blank")
   })
 })
 
 document.querySelectorAll(".whatsapp-btn").forEach(button => {
   button.addEventListener("click", function() {
-    let phoneNumber = "971502254994";
+    let phoneNumber = "01021068752";
     let whatsappLink = "https://wa.me/" + phoneNumber;
-    window.location.href = whatsappLink;
+    window.open(whatsappLink,"_blank")
   });
 });
 document.querySelectorAll(".gmail").forEach(button => {
   button.addEventListener("click", function() {
     let email  = "info@ihabadvocate.com";
-    window.location.href = 'mailto:' + email;
+    let mailtoLink = 'mailto:' + email;
+    window.open(mailtoLink,"_blank")
   });
+});
+
+
+// Initialize ScrollReveal
+ScrollReveal().reveal('.scroll-btm',{
+  delay: 200,
+  duration: 1000,
+  origin: 'bottom',
+  distance: '50px',
+  easing: 'ease-in-out',
+  // reset:"true",
+  
+});
+ScrollReveal().reveal('.scroll-left',{
+  delay: 200,
+  duration: 1000,
+  origin: 'left',
+  distance: '50px',
+  easing: 'ease-in-out',
+  
+});
+ScrollReveal().reveal('.scroll-right',{
+  delay: 200,
+  duration: 1000,
+  origin: 'right',
+  distance: '50px',
+  easing: 'ease-in-out',
+  
+});
+ScrollReveal().reveal('.scroll-top',{
+  delay: 200,
+  duration: 1000,
+  origin: 'top',
+  distance: '50px',
+  easing: 'ease-in-out',
+  
 });
