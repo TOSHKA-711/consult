@@ -135,7 +135,46 @@ document.querySelectorAll(".gmail").forEach(button => {
 });
 
 
-// handle scroll reveal effects
+// Initialize ScrollReveal
+
+
+// ScrollReveal().reveal('.scroll-btm',{
+//   delay: 200,
+//   duration: 1000,
+//   origin: 'bottom',
+//   distance: '50px',
+//   easing: 'ease-in-out',
+//   // reset:"true",
+  
+// });
+// ScrollReveal().reveal('.scroll-left',{
+//   delay: 200,
+//   duration: 1000,
+//   origin: 'left',
+//   distance: '50px',
+//   easing: 'ease-in-out',
+  
+// });
+// ScrollReveal().reveal('.scroll-right',{
+//   delay: 200,
+//   duration: 1000,
+//   origin: 'right',
+//   distance: '50px',
+//   easing: 'ease-in-out',
+  
+// });
+// ScrollReveal().reveal('.scroll-top',{
+//   delay: 200,
+//   duration: 1000,
+//   origin: 'top',
+//   distance: '50px',
+//   easing: 'ease-in-out',
+  
+// });
+
+
+
+
 
 
 let scrollRevealInstances = [];
