@@ -135,37 +135,77 @@ document.querySelectorAll(".gmail").forEach(button => {
 });
 
 
-// Initialize ScrollReveal
-ScrollReveal().reveal('.scroll-btm',{
-  delay: 200,
-  duration: 1000,
-  origin: 'bottom',
-  distance: '50px',
-  easing: 'ease-in-out',
-  // reset:"true",
-  
-});
-ScrollReveal().reveal('.scroll-left',{
-  delay: 200,
-  duration: 1000,
-  origin: 'left',
-  distance: '50px',
-  easing: 'ease-in-out',
-  
-});
-ScrollReveal().reveal('.scroll-right',{
-  delay: 200,
-  duration: 1000,
-  origin: 'right',
-  distance: '50px',
-  easing: 'ease-in-out',
-  
-});
-ScrollReveal().reveal('.scroll-top',{
-  delay: 200,
-  duration: 1000,
-  origin: 'top',
-  distance: '50px',
-  easing: 'ease-in-out',
-  
-});
+// handle scroll reveal effects
+
+
+let scrollRevealInstances = [];
+
+function initScrollReveal() {
+
+    scrollRevealInstances.push(
+        ScrollReveal().reveal('.scroll-btm', {
+            delay: 200,
+            duration: 1000,
+            origin: 'bottom',
+            distance: '50px',
+            easing: 'ease-in-out',
+        })
+    );
+
+    scrollRevealInstances.push(
+        ScrollReveal().reveal('.scroll-left', {
+            delay: 200,
+            duration: 1000,
+            origin: 'left',
+            distance: '50px',
+            easing: 'ease-in-out',
+        })
+    );
+
+    scrollRevealInstances.push(
+        ScrollReveal().reveal('.scroll-right', {
+            delay: 200,
+            duration: 1000,
+            origin: 'right',
+            distance: '50px',
+            easing: 'ease-in-out',
+        })
+    );
+
+    scrollRevealInstances.push(
+        ScrollReveal().reveal('.scroll-top', {
+            delay: 200,
+            duration: 1000,
+            origin: 'top',
+            distance: '50px',
+            easing: 'ease-in-out',
+        })
+    );
+}
+
+function destroyScrollReveal() {
+
+    scrollRevealInstances.forEach(instance => {
+        instance.destroy();
+    });
+
+    scrollRevealInstances = [];
+}
+
+function handleResize() {
+    const mediaQuery = window.matchMedia('(max-width: 1300px)'); // Adjust the media query as needed
+
+    if (mediaQuery.matches) {
+
+        destroyScrollReveal();
+    } else {
+       
+        initScrollReveal();
+    }
+}
+
+
+handleResize();
+
+
+window.addEventListener('resize', handleResize);
